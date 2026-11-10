@@ -31,6 +31,13 @@ The objective was to analyze VPN logs, identify unusual authentication patterns,
 | teardown | 1,291 |
 | failed | 274 |
 
+### 1. Total Events Overview
+![1.jpeg](screenshots/1.jpeg)
+
+### 2. Event Type Distribution
+![2.jpeg](screenshots/2.jpeg)
+
+
 ### 3. Suspicious Activity Identification
 
 The investigation identified unusual activity associated with one user:
@@ -42,10 +49,22 @@ The investigation identified unusual activity associated with one user:
 - Failed events: 274
 - Established connection events (`built`): 4
 
+### 3. Simon's VPN Activity
+![3.jpeg](screenshots/3.jpeg)
+
+### 4. Source IP Analysis
+![4.jpeg](screenshots/4.jpeg)
+
 ### 4. Timeline Analysis
 A cluster of failed VPN events was observed between approximately 07:28 and 07:33. The first subsequent built event was recorded at approximately 07:35, around two minutes after the last observed failed event.
 
 This pattern raised suspicion of potential brute-force activity followed by an established VPN connection.
+
+### 5. Timeline — Start of Failed Attempts
+![5.jpeg](screenshots/5.jpeg)
+
+### 6. Timeline — Failed Attempts and VPN Connection
+![6.jpeg](screenshots/6.jpeg)
 
 
 ### 5. Incident Assessment
