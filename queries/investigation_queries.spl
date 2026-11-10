@@ -1,0 +1,23 @@
+
+/* 1. Count all VPN events */
+index=vpn_logs | stats count
+
+/* 2. Count events by action */
+index=vpn_logs
+| stats count by action
+| sort - count
+
+/* 3. Analyze activity by source IP and username */
+index=vpn_logs
+| stats count by Source_ip UserName
+| sort - count
+
+/* 4. Investigate Simon's activity */
+index=vpn_logs UserName="Simon"
+| sort 0 _time
+| table _time UserName Source_ip action Source_Country
+
+/* 5. Count Simon's events by action */
+index=vpn_logs UserName="Simon"
+| stats count by action
+| sort - count
